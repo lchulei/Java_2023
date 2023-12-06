@@ -5,10 +5,14 @@ import java.util.Objects;
 /**
  * Клас, що представляє транспортний засіб.
  */
-class Vehicle {
+public class Vehicle {
     private String brand;  // Марка транспортного засобу
     private String model;  // Модель транспортного засобу
     private int year;      // Рік випуску транспортного засобу
+
+    public Vehicle() {
+
+    }
 
     /**
      * Конструктор для створення об'єкта класу Vehicle.

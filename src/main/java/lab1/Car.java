@@ -5,10 +5,14 @@ import java.util.Objects;
 /**
  * Клас, що представляє транспортний засіб автомобіль, який є підкласом транспортного засобу.
  */
-class Car extends Vehicle {
+public class Car extends Vehicle {
 
     /** Кількість дверей у автомобілі. */
     private int numberOfDoors;
+
+    public Car() {
+        super();
+    }
 
     /**
      * Конструктор для створення об'єкта класу Car.

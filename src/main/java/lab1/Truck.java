@@ -5,9 +5,13 @@ import java.util.Objects;
 /**
  * Клас, що представляє транспортний засіб вантажівку, яка є підкласом транспортного засобу.
  */
-class Truck extends Vehicle {
+public class Truck extends Vehicle {
     /** Вантажопідйомність вантажівки. */
     private int cargoCapacity;
+
+    public Truck() {
+        super();
+    }
 
     /**
      * Конструктор для створення об'єкта класу Truck.

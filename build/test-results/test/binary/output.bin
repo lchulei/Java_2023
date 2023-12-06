@@ -1,4 +1,1 @@
-9Vehicle{brand='Mercedes-Benz', model='C200', year=1997}
-=Car{brand='Lada', model='1007', year=2000, numberOfDoors=5}
-BMotorcycle{brand='Viper', model='F4', year=2005, engineType='4'}
-ETruck{brand='Renault', model='Magnum', year=2008, cargoCapacity=10}
+.D:\ЛУнівер\Java\Java_2023\vehicle.xml

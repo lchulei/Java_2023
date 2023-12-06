@@ -5,10 +5,14 @@ import java.util.Objects;
 /**
  * Клас, що представляє мотоцикл, який є підкласом транспортного засобу.
  */
-class Motorcycle extends Vehicle {
+public class Motorcycle extends Vehicle {
 
     /** Тип двигуна мотоцикла. */
     private String engineType;
+
+    public Motorcycle() {
+        super();
+    }
 
     /**
      * Конструктор для створення об'єкта класу Motorcycle.
