@@ -74,23 +74,44 @@ class Truck extends Vehicle {
      * Статичний клас Builder для побудови об'єктів класу Truck.
      */
     public static class TruckBuilder {
-        private final String brand;
-        private final String model;
-        private final int year;
+        private String brand;
+        private String model;
+        private int year;
         private int cargoCapacity;
 
         /**
-         * Конструктор для об'єкта класу TruckBuilder, який приймає обов'язкові параметри.
+         * Встановити марку мотоцикла.
          *
-         * @param brand Марка вантажівки.
-         * @param model Модель вантажівки.
-         * @param year  Рік випуску вантажівки.
+         * @param brand Марка мотоцикла.
+         * @return Посилання на об'єкт білдера.
          */
-        public TruckBuilder(String brand, String model, int year) {
+        public Truck.TruckBuilder setBrand(String brand) {
             this.brand = brand;
-            this.model = model;
-            this.year = year;
+            return this;
         }
+
+        /**
+         * Встановити модель мотоцикла.
+         *
+         * @param model Модель мотоцикла.
+         * @return Посилання на об'єкт білдера.
+         */
+        public Truck.TruckBuilder setModel(String model) {
+            this.model = model;
+            return this;
+        }
+
+        /**
+         * Встановити рік випуску мотоцикла.
+         *
+         * @param year Рік випуску мотоцикла.
+         * @return Посилання на об'єкт білдера.
+         */
+        public Truck.TruckBuilder setYear(int year) {
+            this.year = year;
+            return this;
+        }
+
 
         /**
          * Встановити вантажопідйомність вантажівки.
@@ -98,7 +119,7 @@ class Truck extends Vehicle {
          * @param cargoCapacity Вантажопідйомність вантажівки.
          * @return Поточний об'єкт TruckBuilder для подальшої побудови.
          */
-        public TruckBuilder cargoCapacity(int cargoCapacity) {
+        public TruckBuilder setCargoCapacity(int cargoCapacity) {
             this.cargoCapacity = cargoCapacity;
             return this;
         }
