@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lab0.Variant8Test" tests="36" skipped="0" failures="0" errors="0" timestamp="2023-11-21T20:08:16" hostname="DESKTOP-5LB582J" time="0.046">
+  <properties/>
+  <testcase name="MassTest" classname="lab0.Variant8Test" time="0.005"/>
+  <testcase name="arrayTest[0]([I@31ad0429, [I@5a4a8c86, 2)" classname="lab0.Variant8Test" time="0.002"/>
+  <testcase name="arrayTest[1]([I@29ae5fb7, [I@2f12971b, 5)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="arrayTest[2]([I@58cd1443, [I@3c5bb0a, 3)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="booleanTest[0](5, 3, true)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="booleanTest[1](0, 3, false)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="booleanTest[2](2, 1, false)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="forTest[0](2, 5, 14)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="forTest[1](4, 7, 22)" classname="lab0.Variant8Test" time="0.001"/>
+  <testcase name="forTest[2](7, 12, 57)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="greaterIntegerTest" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="ifTest[0](2, 3, 3, 2)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="ifTest[1](8, 5, 8, 5)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="ifTest[2](3, -3, 3, -3)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="inputTest[0](54, 45)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="inputTest[1](12, 21)" classname="lab0.Variant8Test" time="0.001"/>
+  <testcase name="inputTest[2](76, 67)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="inputTest[0](2, 4, 3)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="inputTest[1](6, 5, 5)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="inputTest[2](10, 22, 16)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="lessIntegerTest" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="minMaxTest[0]([I@40764edb, [I@13e4c96f)" classname="lab0.Variant8Test" time="0.001"/>
+  <testcase name="minMaxTest[1]([I@207ce913, [I@528e6b51)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="minMaxTest[2]([I@b3067a5, [I@4c4323a1)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="negativeWhileTest[0](0)" classname="lab0.Variant8Test" time="0.001"/>
+  <testcase name="negativeWhileTest[1](-2)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="negativeWhileTest[2](-1000)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="switchNegativeTest" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="switchTest[0](3, 10, 2, 10)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="switchTest[1](1, 5, 30, 4)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="twoDimensionArrayTest[0]([[I@49445793, 5, 4, 2, [I@6ae09bb9)" classname="lab0.Variant8Test" time="0.001"/>
+  <testcase name="twoDimensionArrayTest[1]([[I@61ea759, 5, 6, 3, [I@6d0d90c6)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="whileTest[0](65, 8)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="whileTest[1](10, 3)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="whileTest[2](9, 2)" classname="lab0.Variant8Test" time="0.0"/>
+  <testcase name="whileTest[3](4, 1)" classname="lab0.Variant8Test" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
