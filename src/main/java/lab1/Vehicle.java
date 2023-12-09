@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Клас, що представляє транспортний засіб.
  */
-public class Vehicle {
+public class Vehicle implements Comparable<Vehicle> {
     private String brand;  // Марка транспортного засобу
     private String model;  // Модель транспортного засобу
     private int year;      // Рік випуску транспортного засобу
@@ -119,6 +119,19 @@ public class Vehicle {
     @Override
     public int hashCode() {
         return Objects.hash(brand, model, year);
+    }
+
+    @Override
+    public int compareTo(Vehicle v) {
+        if (brand.compareTo(v.brand) != 0) {
+            return brand.compareTo(v.brand);
+        } else if (model.compareTo(v.model) != 0) {
+            return model.compareTo(v.model);
+        } if (year != v.year) {
+            return year - v.year;
+        } else {
+            return 0;
+        }
     }
 
     /**

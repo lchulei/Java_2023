@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Клас, що представляє мотоцикл, який є підкласом транспортного засобу.
  */
-public class Motorcycle extends Vehicle {
+public class Motorcycle extends Vehicle implements Comparable<Vehicle> {
 
     /** Тип двигуна мотоцикла. */
     private String engineType;
@@ -90,6 +90,18 @@ public class Motorcycle extends Vehicle {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), engineType);
+    }
+
+    @Override
+    public int compareTo(Vehicle v) {
+        if (!(v instanceof Motorcycle)) {
+            return super.compareTo(v);
+        }
+        Motorcycle m = (Motorcycle) v;
+        if (super.compareTo(m) == 0) {
+            return engineType.compareTo(m.engineType);
+        }
+        return super.compareTo(m);
     }
 
     /**

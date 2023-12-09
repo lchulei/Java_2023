@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Клас, що представляє транспортний засіб вантажівку, яка є підкласом транспортного засобу.
  */
-public class Truck extends Vehicle {
+public class Truck extends Vehicle implements Comparable<Vehicle> {
     /** Вантажопідйомність вантажівки. */
     private int cargoCapacity;
 
@@ -74,6 +74,19 @@ public class Truck extends Vehicle {
     public int hashCode() {
         return Objects.hash(super.hashCode(), cargoCapacity);
     }
+
+    @Override
+    public int compareTo(Vehicle v) {
+        if (!(v instanceof Truck)) {
+            return super.compareTo(v);
+        }
+        Truck t = (Truck) v;
+        if (super.compareTo(t) == 0) {
+            return cargoCapacity - t.cargoCapacity;
+        }
+        return super.compareTo(t);
+    }
+
     /**
      * Статичний клас Builder для побудови об'єктів класу Truck.
      */

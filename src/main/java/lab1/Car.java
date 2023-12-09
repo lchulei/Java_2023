@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Клас, що представляє транспортний засіб автомобіль, який є підкласом транспортного засобу.
  */
-public class Car extends Vehicle {
+public class Car extends Vehicle implements Comparable<Vehicle> {
 
     /** Кількість дверей у автомобілі. */
     private int numberOfDoors;
@@ -83,6 +83,18 @@ public class Car extends Vehicle {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), numberOfDoors);
+    }
+
+    @Override
+    public int compareTo(Vehicle v) {
+        if (!(v instanceof Car)) {
+            return super.compareTo(v);
+        }
+        Car c = (Car) v;
+        if (super.compareTo(c) == 0) {
+            return numberOfDoors - c.numberOfDoors;
+        }
+        return super.compareTo(c);
     }
 
     /**
