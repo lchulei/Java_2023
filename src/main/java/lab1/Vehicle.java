@@ -1,13 +1,29 @@
 package lab1;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import javax.validation.constraints.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Клас, що представляє транспортний засіб.
  */
 public class Vehicle implements Comparable<Vehicle> {
+
+    @NotBlank(message = "Brand cannot be blank")
+    @Size(min = 1, max = 50, message = "Brand must be between 2 and 50 characters")
     private String brand;  // Марка транспортного засобу
+
+    @NotBlank(message = "Brand cannot be blank")
+    @Size(min = 1, max = 50, message = "Brand must be between 2 and 50 characters")
     private String model;  // Модель транспортного засобу
+
+    @Min(value = 1900, message = "{Min.year}")
+    @Max(value = 2030, message = "{Max.year}")
     private int year;      // Рік випуску транспортного засобу
 
     public Vehicle() {
@@ -175,13 +191,30 @@ public class Vehicle implements Comparable<Vehicle> {
             return this;
         }
 
+        private void validate(Vehicle vehicle) {
+            Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+
+            Set<String> validationMessages = new HashSet<>();
+            Set<ConstraintViolation<Vehicle>> violations = validator.validate(vehicle);
+
+            for (ConstraintViolation<Vehicle> violation : violations) {
+                validationMessages.add(violation.getInvalidValue() + ": " + violation.getMessage());
+            }
+
+            if (!validationMessages.isEmpty()) {
+                throw new IllegalArgumentException("Invalid fields: " + String.join(", ", validationMessages));
+            }
+        }
+
         /**
          * Побудувати об'єкт Vehicle за допомогою параметрів, встановлених в Builder.
          *
          * @return Об'єкт Vehicle.
          */
         public Vehicle build() {
-            return new Vehicle(brand, model, year);
+            Vehicle vehicle = new Vehicle(brand, model, year);
+            validate(vehicle);
+            return vehicle;
         }
     }
 }
