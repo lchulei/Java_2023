@@ -13,14 +13,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab1/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab1/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab1/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab1/Motorcycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab1/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab1/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab1/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab1/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +52,52 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Gradle.Lab_3_Test.testCollections">
+  <component name="RunManager" selected="Gradle.CreateTablesTest.createTables">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="CreateTablesTest.createBrandTable" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;lab5.CreateTablesTest.createBrandTable&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CreateTablesTest.createTables" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;lab5.CreateTablesTest.createTables&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="Lab_1_Test.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -122,32 +159,13 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Variant8Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;lab0.Variant8Test&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CreateTablesTest.createTables" />
+        <item itemvalue="Gradle.CreateTablesTest.createBrandTable" />
         <item itemvalue="Gradle.Lab_3_Test.testCollections" />
         <item itemvalue="Gradle.SerializerTest.test" />
         <item itemvalue="Gradle.Lab_1_Test.test" />
-        <item itemvalue="Gradle.Variant8Test" />
       </list>
     </recent_temporary>
   </component>
@@ -165,26 +183,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="956" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1702149486697">
+    <state x="956" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1702228993795">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="956" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1702149486697" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1702153595842">
+    <state x="956" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1702228993795" />
+    <state x="466" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1702230412804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1702153595842" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1702153595842">
+    <state x="466" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1702230412804" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1702233381435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1702153595842" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1702153595842">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1702233381435" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1702233381435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1702153595842" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1702153595842">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1702233381435" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1702233381435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1702153595842" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1702233381435" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1702233381435">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1702233381435" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1700585359789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
