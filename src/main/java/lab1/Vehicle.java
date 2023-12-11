@@ -1,6 +1,15 @@
 package lab1;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * The {@code Vehicle} class represents a general vehicle with a model and manufacturing year.
@@ -8,10 +17,16 @@ import java.util.Objects;
  */
 public class Vehicle implements Comparable<Vehicle> {
 
+
     /** The model of the vehicle. */
+    @NotNull(message = "Model can't be null!")
     private Model model;
 
+
     /** The manufacturing year of the vehicle. */
+    @NotNull(message = "Year can't be null!")
+    @Min(value = 1900, message = "Year must be greater than 1900!")
+    @Max(value = 2030, message = "Year must be less than 2030!")
     private Integer year;
 
     /**
@@ -138,13 +153,49 @@ public class Vehicle implements Comparable<Vehicle> {
             return this;
         }
 
+//        private void validate(Vehicle vehicle) {
+//            Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+//
+//            Set<String> validationMessages = new HashSet<>();
+//            Set<ConstraintViolation<Vehicle>> constraintViolations = validator.validate(vehicle);
+//
+//            for(ConstraintViolation constraintViolation : constraintViolations) {
+//                String fieldName = constraintViolation.getPropertyPath().toString().toUpperCase();
+//                validationMessages.add(fieldName + " " + constraintViolation.getMessage());
+//            }
+//
+//            if (!validationMessages.isEmpty()) {
+//                throw new IllegalArgumentException("Invalid fields: " + String.join(", ", validationMessages));
+//            }
+//        }
+
+        private void validate(Vehicle vehicle) {
+            ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+            Validator validator = factory.getValidator();
+
+            Set<String> validationMessages = new HashSet<>();
+            Set<ConstraintViolation<Vehicle>> constraintViolations = validator.validate(vehicle);
+
+            for(ConstraintViolation constraintViolation : constraintViolations) {
+                System.out.println(constraintViolation.getMessage());
+                String fieldName = constraintViolation.getPropertyPath().toString().toUpperCase();
+                validationMessages.add(fieldName + " " + constraintViolation.getMessage());
+            }
+
+            if (!validationMessages.isEmpty()) {
+                throw new IllegalArgumentException("Invalid fields: " + String.join(", ", validationMessages));
+            }
+        }
+
         /**
          * Builds a new {@code Vehicle} object with the specified parameters.
          *
          * @return a new {@code Vehicle} object.
          */
         public Vehicle build() {
-            return new Vehicle(model, year);
+            Vehicle vehicle = new Vehicle(model, year);
+            validate(vehicle);
+            return vehicle;
         }
     }
 }
