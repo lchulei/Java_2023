@@ -1,6 +1,6 @@
 package lab5.sqlUtils;
 
-import lab5.connection.BasicConnectionPool;
+import lab5.connection.JDBCConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -42,12 +42,17 @@ public class SQLExecutor {
     }
 
     public void executeQueryWithNoResult(String query) throws SQLException {
-        BasicConnectionPool basicConnectionPool = BasicConnectionPool.create(url, user, password);
-        Connection connection = basicConnectionPool.getConnection();
-        Statement statement = connection.createStatement();
-        statement.execute(query);
+        try {
+            Connection connection = JDBCConnection.getConnection(url, user, password);
+            Statement statement = connection.createStatement();
+            statement.execute(query);
 
-        statement.close();
-        connection.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.err.println("Error occurred, while executing query!");
+            e.printStackTrace();
+        }
+
     }
 }

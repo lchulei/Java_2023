@@ -16,7 +16,6 @@ public class XmlSerializer<T> implements Serializer<T> {
     @Override
     public void serialize(T entity, Path filePath) throws IOException {
         xmlMapper.writeValue(filePath.toFile(), entity);
-        System.out.println(filePath.toFile().getAbsolutePath());
     }
 
     @Override

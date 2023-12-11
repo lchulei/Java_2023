@@ -1,14 +1,12 @@
 package lab2;
 
-import lab0.Variant8;
-import lab1.Car;
+import lab1.Brand;
+import lab1.Model;
 import lab1.Vehicle;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import static org.testng.Assert.assertEquals;
 
@@ -16,7 +14,7 @@ public class SerializerTest {
 
     @Test
     public void test() throws IOException {
-        Vehicle vehicle = new Vehicle.VehicleBuilder().setBrand("Mercedes-Benz").setModel("C200").setYear(1997).build();
+        Vehicle vehicle = new Vehicle.VehicleBuilder().setModel(new Model.ModelBuilder().setBrand(new Brand.BrandBuilder().setName("Mercedes-Benz").build()).setName("C200").build()).setYear(1997).build();
 
         // Приклад використання XmlSerializer
         XmlSerializer<Vehicle> xmlSerializer = new XmlSerializer<>(Vehicle.class);

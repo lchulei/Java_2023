@@ -1,220 +1,150 @@
 package lab1;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
-import javax.validation.constraints.*;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 /**
- * Клас, що представляє транспортний засіб.
+ * The {@code Vehicle} class represents a general vehicle with a model and manufacturing year.
+ * It implements the {@code Comparable} interface to enable sorting based on model and year.
  */
 public class Vehicle implements Comparable<Vehicle> {
 
-    @NotBlank(message = "Brand cannot be blank")
-    @Size(min = 1, max = 50, message = "Brand must be between 2 and 50 characters")
-    private String brand;  // Марка транспортного засобу
+    /** The model of the vehicle. */
+    private Model model;
 
-    @NotBlank(message = "Brand cannot be blank")
-    @Size(min = 1, max = 50, message = "Brand must be between 2 and 50 characters")
-    private String model;  // Модель транспортного засобу
-
-    @Min(value = 1900, message = "{Min.year}")
-    @Max(value = 2030, message = "{Max.year}")
-    private int year;      // Рік випуску транспортного засобу
-
-    public Vehicle() {
-
-    }
+    /** The manufacturing year of the vehicle. */
+    private Integer year;
 
     /**
-     * Конструктор для створення об'єкта класу Vehicle.
-     *
-     * @param brand Марка транспортного засобу.
-     * @param model Модель транспортного засобу.
-     * @param year  Рік випуску транспортного засобу.
+     * Constructs a new {@code Vehicle} object with default values.
      */
-    protected Vehicle(String brand, String model, int year) {
-        this.brand = brand;
+    public Vehicle() {}
+
+    /**
+     * Constructs a new {@code Vehicle} object with the specified model, and year.
+     *
+     * @param model the model of the vehicle.
+     * @param year  the manufacturing year of the vehicle.
+     */
+    public Vehicle(Model model, Integer year) {
         this.model = model;
         this.year = year;
     }
 
     /**
-     * Отримати марку транспортного засобу.
+     * Gets the model of the vehicle.
      *
-     * @return Марка транспортного засобу.
+     * @return the model of the vehicle.
      */
-    public String getBrand() {
-        return brand;
-    }
-
-    /**
-     * Встановити марку транспортного засобу.
-     *
-     * @param brand Нова марка транспортного засобу.
-     */
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    /**
-     * Отримати модель транспортного засобу.
-     *
-     * @return Модель транспортного засобу.
-     */
-    public String getModel() {
+    public Model getModel() {
         return model;
     }
 
     /**
-     * Встановити модель транспортного засобу.
+     * Sets the model of the vehicle.
      *
-     * @param model Нова модель транспортного засобу.
+     * @param model the new model for the vehicle.
      */
-    public void setModel(String model) {
+    public void setModel(Model model) {
         this.model = model;
     }
 
     /**
-     * Отримати рік випуску транспортного засобу.
+     * Gets the manufacturing year of the vehicle.
      *
-     * @return Рік випуску транспортного засобу.
+     * @return the manufacturing year of the vehicle.
      */
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
     /**
-     * Встановити рік випуску транспортного засобу.
+     * Sets the manufacturing year of the vehicle.
      *
-     * @param year Новий рік випуску транспортного засобу.
+     * @param year the new manufacturing year for the vehicle.
      */
-    public void setYear(int year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 
-    /**
-     * Перевизначений метод для отримання рядкового представлення об'єкта.
-     *
-     * @return Рядкове представлення об'єкта.
-     */
     @Override
     public String toString() {
         return "Vehicle{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
+                "model=" + model.toString() +
                 ", year=" + year +
                 '}';
     }
 
-    /**
-     * Перевизначений метод для порівняння об'єктів.
-     *
-     * @param o Об'єкт, з яким порівнюється поточний об'єкт.
-     * @return true, якщо об'єкти рівні, інакше - false.
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vehicle vehicle = (Vehicle) o;
-        return year == vehicle.year &&
-                Objects.equals(brand, vehicle.brand) &&
-                Objects.equals(model, vehicle.model);
+        return Objects.equals(model, vehicle.model) &&
+                Objects.equals(year, vehicle.year);
     }
 
-    /**
-     * Перевизначений метод для генерації хеш-коду об'єкта.
-     *
-     * @return Хеш-код об'єкта.
-     */
     @Override
     public int hashCode() {
-        return Objects.hash(brand, model, year);
+        return Objects.hash(model, year);
     }
 
+    /**
+     * Compares this {@code Vehicle} object with another {@code Vehicle} object based on model and year.
+     * The comparison is case-sensitive and uses the natural ordering of the model and year.
+     *
+     * @param v the {@code Vehicle} object to be compared.
+     * @return a negative integer, zero, or a positive integer as this {@code Vehicle} object is
+     *         less than, equal to, or greater than the specified {@code Vehicle} object.
+     * @throws NullPointerException if the specified {@code Vehicle} is null.
+     */
     @Override
     public int compareTo(Vehicle v) {
-        if (brand.compareTo(v.brand) != 0) {
-            return brand.compareTo(v.brand);
-        } else if (model.compareTo(v.model) != 0) {
-            return model.compareTo(v.model);
-        } if (year != v.year) {
-            return year - v.year;
+        int modelComparison = model.compareTo(v.model);
+
+        if (modelComparison != 0) {
+            return modelComparison;
         } else {
-            return 0;
+            return Integer.compare(year, v.year);
         }
     }
 
     /**
-     * Внутрішній статичний клас Builder для конструювання об'єкта Vehicle.
+     * The {@code VehicleBuilder} class is a builder for creating {@code Vehicle} objects.
      */
     public static class VehicleBuilder {
-        private String brand;
-        private String model;
-        private int year;
+        /** The model of the vehicle. */
+        private Model model;
+
+        /** The manufacturing year of the vehicle. */
+        private Integer year;
 
         /**
-         * Встановити марку транспортного засобу.
+         * Sets the model of the vehicle.
          *
-         * @param brand Марка транспортного засобу.
-         * @return Поточний об'єкт Builder.
+         * @param model the model of the vehicle.
          */
-        public VehicleBuilder setBrand(String brand) {
-            this.brand = brand;
-            return this;
-        }
-
-        /**
-         * Встановити модель транспортного засобу.
-         *
-         * @param model Модель транспортного засобу.
-         * @return Поточний об'єкт Builder.
-         */
-        public VehicleBuilder setModel(String model) {
+        public VehicleBuilder setModel(Model model) {
             this.model = model;
             return this;
         }
 
         /**
-         * Встановити рік випуску транспортного засобу.
+         * Sets the manufacturing year of the vehicle.
          *
-         * @param year Рік випуску транспортного засобу.
-         * @return Поточний об'єкт Builder.
+         * @param year the manufacturing year of the vehicle.
          */
-        public VehicleBuilder setYear(int year) {
+        public VehicleBuilder setYear(Integer year) {
             this.year = year;
             return this;
         }
 
-        private void validate(Vehicle vehicle) {
-            Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-
-            Set<String> validationMessages = new HashSet<>();
-            Set<ConstraintViolation<Vehicle>> violations = validator.validate(vehicle);
-
-            for (ConstraintViolation<Vehicle> violation : violations) {
-                validationMessages.add(violation.getInvalidValue() + ": " + violation.getMessage());
-            }
-
-            if (!validationMessages.isEmpty()) {
-                throw new IllegalArgumentException("Invalid fields: " + String.join(", ", validationMessages));
-            }
-        }
-
         /**
-         * Побудувати об'єкт Vehicle за допомогою параметрів, встановлених в Builder.
+         * Builds a new {@code Vehicle} object with the specified parameters.
          *
-         * @return Об'єкт Vehicle.
+         * @return a new {@code Vehicle} object.
          */
         public Vehicle build() {
-            Vehicle vehicle = new Vehicle(brand, model, year);
-            validate(vehicle);
-            return vehicle;
+            return new Vehicle(model, year);
         }
     }
 }

@@ -1,1 +1,1 @@
-brand:Mercedes-Benz,model:C200,year:1997,
+model:Model{name='C200', brand=Brand{name='Mercedes-Benz'}},year:1997,
